@@ -1,11 +1,7 @@
-# bot.py
 import os
 import importlib
-# import discord
 from discord.ext import commands
 from dotenv import load_dotenv
-# spotify_methods = importlib.import_module('Spotify-methods')
-# from spotify_methods import helper
 import subprocess
 
 load_dotenv()
@@ -15,14 +11,6 @@ bot = commands.Bot(command_prefix='!')
 
 @bot.command(name='queue')
 async def queue(ctx, arg):
-    # helper(10,100)
     subprocess.run(["python3", "spotify_methods.py", arg])
     await ctx.send("{} songs added to your queue.".format(arg))
 bot.run(TOKEN)
-# client = discord.Client()
-
-# @client.event
-# async def on_ready():
-#     print(f'{client.user} has connected to Discord!')
-
-# client.run(TOKEN)
