@@ -4,7 +4,7 @@ import webbrowser
 import datetime
 import csv
 import os
-from ClusteringSongs import similar_songs
+from clustering import similar_songs
 import threading
 import pandas as pd
 import sys
