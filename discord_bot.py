@@ -11,6 +11,6 @@ bot = commands.Bot(command_prefix='!')
 
 @bot.command(name='queue')
 async def queue(ctx, arg):
-    subprocess.run(["python3", "spotify_methods.py", arg])
+    subprocess.run(["python3", "app.py", arg])
     await ctx.send("{} songs added to your queue.".format(arg))
 bot.run(TOKEN)
