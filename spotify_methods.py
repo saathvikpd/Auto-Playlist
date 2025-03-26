@@ -11,8 +11,9 @@ import sys
 import random
 from collections import Counter
 
-client_ID = '0a6420c1d9094c1d81b4b5097d6cd3f1' #add your own
-client_Secret = 'ac4a6d6c55d3445788c79503d23f64c8' #add your own
+# Insert own keys below
+client_ID = ''
+client_Secret = ''
 AUTH_URL = 'https://accounts.spotify.com/api/token'
 
 def Get_access() -> tuple:
@@ -118,8 +119,6 @@ class Spotify:
         temp_lst = [curr_song_ID]
         temp_lst.extend(songs_array)
         songs_array = list(temp_lst)
-        # print(songs_array[:5])
-        # print(len(Counter(songs_array)), len(songs_array))
         song_index = 1
         for i in range(len(songs_array)):
             try:
@@ -134,7 +133,6 @@ class Spotify:
                 continue
 
     def add_to_queue(self, songs):
-        # device_id = self.get_device_id
         for song in songs:
             try:
                 url = "https://api.spotify.com/v1/me/player/queue?uri=spotify%3Atrack%3A{s}".format(s = song)
@@ -201,7 +199,6 @@ def helper(interval, num_songs):
     end = False
     i = 0
     while total_num_songs < (num_songs // interval):
-    # for i in range(0, num_songs, interval):
         j = min(num_songs, i+interval)
         song.create_csv([genre], [], i, j)
         ind = Spotify.num_csvs - 1
@@ -223,10 +220,6 @@ def helper(interval, num_songs):
             song.add_to_queue(list(result.Song_ID))
         except:
             print("-")
-        # if total_num_songs >= num_songs // interval:
-        #     temp_random = pd.read_csv("Queue.csv")
-        #     temp_random = temp_random[:num_songs//interval].to_csv("Queue.csv", index = False)
-        #     break
         os.remove(csv)
         print("Songs: {}/{}".format(total_num_songs, num_songs // interval))
         if end:
@@ -237,29 +230,9 @@ def helper(interval, num_songs):
         
 if __name__ == "__main__":
     args = sys.argv[1:]
-    # TODO: MULTI-THREADING
-    
-    # # creating thread
-    # t1 = threading.Thread(target=helper, args=(10, 100))
-    # t2 = threading.Thread(target=helper_songs, args=())
-    
-    # # # starting thread 1
-    # t1.start()
-    # # # starting thread 2
-    # t2.start()
-
-    # # # wait until thread 1 is completely executed
-    # t1.join()
-    # # # wait until thread 2 is completely executed
-    # t2.join()
     csv_size = 50
-    
     helper(csv_size, int(args[0]) * csv_size)
-    # songs = Spotify()
-    # print(songs.get_genre())
-  
-    # both threads completely executed
-    # print("Done!")
+
 
 
 
