@@ -1,4 +1,6 @@
-# UCSD Computer Science & Engineering Society Tridev Hackathon 2022
+## Hackathon: UCSD Computer Science & Engineering Society Tridev Hackathon 2022
+
+### Award: Best Project
 
 ## Project Description:
 - Queues songs based on current song
