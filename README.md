@@ -7,8 +7,6 @@
 - Employs a modified K-Means Clustering algorithm to find relevant songs
 - Leverages Spotify API to retrieve song data
 
-Award: BEST PROJECT
-
 ## Spotify API Setup
 
 ### 1. Create Developer Account
