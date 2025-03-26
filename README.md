@@ -19,7 +19,7 @@ Name the app whatever you want to call it. Add 'https://google.com' under 'Redir
 
 ### 3. Take Note Of Access Keys
 
-Find the Client ID and Client Secret keys in App Settings. Input them in the respective fields inside the spotify_methods.py file.
+Find the Client ID and Client Secret keys in App Settings. Input them in the respective fields inside the app.py file.
 
 ## Run Code
 
@@ -32,6 +32,6 @@ pip install -r requirements.txt
 ```
 Run app and follow instructions in terminal (ensure you have a song playing on Spotify)
 ```bash
-python spotify_methods.py
+python app.py
 ```
 
