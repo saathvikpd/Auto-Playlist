@@ -9,15 +9,15 @@ Award: BEST PROJECT
 
 ## Spotify API Setup
 
-# 1. Create Developer Account
+### 1. Create Developer Account
 
 Got to 'https://developer.spotify.com/', and create an account.
 
-# 2. Create Sample App
+### 2. Create Sample App
 
 Name the app whatever you want to call it. Add 'https://google.com' under 'Redirect URIs'. Select 'Web API' under 'APIs Used'.
 
-# 3. Take Note Of Access Keys
+### 3. Take Note Of Access Keys
 
 Find the Client ID and Client Secret keys in App Settings. Input them in the respective fields inside the spotify_methods.py file.
 
