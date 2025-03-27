@@ -1,55 +1,109 @@
-# 🎧 Auto-Playlist
+# 🎧 Auto-Playlist Discord Bot
 
-**🏆 Award-Winning Project — Best Project @ UCSD CSES Tridev Hackathon 2022**
+**🏆 Best Project — UCSD CSES Tridev Hackathon 2022**
 
-Auto-Playlist is an intelligent playlist generator that queues songs based on the currently playing track using a custom machine learning algorithm and the Spotify API.
-
----
-
-## 🚀 Project Highlights
-
-- 🎶 Automatically queues relevant songs based on your current Spotify track
-- 📊 Uses a **modified K-Means clustering algorithm** to group and recommend songs
-- 🔗 Integrates with the **Spotify Web API** to retrieve audio features and metadata
+Auto-Playlist is an intelligent **Discord bot** that automatically queues songs based on the currently playing Spotify track. It uses a modified K-Means clustering algorithm and the Spotify API to generate smart playlists on the fly.
 
 ---
 
-## 🔧 Spotify API Setup
+## 🚀 Features
 
-### 1. Create a Developer Account
-
-Go to [Spotify Developer Dashboard](https://developer.spotify.com/) and log in or sign up for an account.
-
-### 2. Register an App
-
-- Create a new app and give it any name.
-- Under **Redirect URIs**, add: `https://google.com`
-- Choose **Web API** under "APIs Used"
-
-### 3. Get Your API Keys
-
-- In the app dashboard, copy your **Client ID** and **Client Secret**
-- Paste these keys into the appropriate fields in `app.py`
+- 🔁 Queue songs similar to the one currently playing on your Spotify
+- 🤖 Easily controlled through a `!queue [num_songs]` command on Discord
+- 🧠 Uses a custom K-Means-based clustering algorithm for intelligent song recommendations
+- 🎵 Integrates with the Spotify API to fetch song data and features
 
 ---
 
-## 💻 How to Run the App
+## 🔧 Setup Instructions
 
-### 1. Initial Setup
+### 1. Clone the Repository & Set Up Environment
 
 ```bash
+git clone https://github.com/your-username/Auto-Playlist.git
 cd Auto-Playlist
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Launch the App
+## 💬 Discord Bot Setup
 
-Make sure you have a song currently playing on Spotify, then run:
+### 1. Create a Discord Application
+- Go to the [Discord Developer Portal](https://discord.com/developers/applications)
+- Click **"New Application"**, and give it a name
+
+### 2. Add a Bot to Your App
+- Navigate to the **Bot** tab on the left sidebar
+- Click **"Add Bot"**
+- Reveal and **copy your Bot Token**
+- Paste this token into your `discord.py` file in the appropriate location
+
+### 3. Set OAuth2 & Bot Permissions
+- Go to **OAuth2 → URL Generator**
+- Under **Scopes**, check: `bot`
+- Under **Bot Permissions**, select:
+  - `View Channels`
+  - `Send Messages`
+  - `Read Message History`
+  - `Connect`
+  - `Speak`
+- Copy the generated URL, paste it into your browser, and invite the bot to your Discord server
+
+---
+
+## 🎵 Spotify API Setup
+
+### 1. Create a Spotify Developer Account
+- Visit the [Spotify Developer Dashboard](https://developer.spotify.com/)
+- Log in or sign up for an account
+
+### 2. Register a New App
+- Go to **Dashboard → Create an App**
+- Give it a name (anything works)
+- Under **Redirect URIs**, add: `https://google.com`
+- Note your **Client ID** and **Client Secret**
+- Paste these credentials into `app.py` where required
+
+---
+
+## ▶️ Running the Bot
+
+Make sure:
+- ✅ A song is currently playing on your Spotify
+- ✅ The bot has been added to your Discord server
+
+Then run:
 
 ```bash
-python app.py
+python discord.py
 ```
 
-Follow the instructions provided in the terminal to generate your custom playlist.
+## ▶️ Running the Bot Command in Discord
+
+In your Discord server, type:
+
+```discord
+!queue [number_of_songs]
+```
+
+The bot will respond with a Spotify authorization URL.
+
+### Complete the following steps:
+
+1. Click the link and log in to Spotify  
+2. After authorization, you will be redirected to a URI (likely starting with `https://google.com`)  
+3. Copy the **entire redirected URL**  
+4. Paste it into your terminal when prompted
+
+🎉 Your playlist will now be intelligently queued with similar songs!
+
+---
+
+## 🧪 Technologies Used
+
+- Python
+- Discord.py (Bot) 
+- Spotify Web API  
+- K-Means Clustering (custom implementation)
+
