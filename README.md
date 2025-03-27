@@ -63,7 +63,7 @@ pip install -r requirements.txt
 - Give it a name (anything works)
 - Under **Redirect URIs**, add: `https://google.com`
 - Note your **Client ID** and **Client Secret**
-- Paste these credentials into `app.py` where required
+- Paste these credentials into `spotify_methods.py` where required
 
 ---
 
